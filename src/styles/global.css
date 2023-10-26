@@ -1,0 +1,249 @@
+html, body, :root {
+    height:100%;
+    margin:0;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-decoration: none;
+    padding:0;
+}
+
+nav {
+    position: fixed;
+    width:100%;
+    top:0;
+    height:10%;
+    z-index:100;
+    background-color: transparent;
+    box-shadow: 0px 5px 3px -7px #dddddd, 5px 5px 15px 5px rgba(0,0,0,0);
+}
+
+nav .nav-flex {
+    display:flex;
+    justify-content: left;
+    align-items: center;
+   
+}
+
+nav #Icon {
+    display:none;
+}
+
+.nav-flex ul {
+    list-style: none;
+    padding:10px 15px 10px 15px;
+    display: flex;
+    flex-direction: row;
+    width:50%;
+
+    
+}
+
+.nav-flex ul li {
+    margin-right: 15px;
+}
+.nav-flex ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    text-transform: uppercase;
+    border-radius:3px;
+    padding: 15px;
+}
+.nav-flex ul li a:hover {
+    background: lightblue;
+    transition: .5s;
+}
+.nav-flex ul li a.active {
+    background: cyan;
+}
+
+#Logo {
+    margin-left: 15px;
+    font-size: 20px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    width:30%;
+    height:100%;
+    
+}
+
+#Logo a img {
+    width:  8vh;
+    height: 8vh;
+    padding-top: 10px;
+    border-radius: 30%;
+
+}
+
+.bars-menu {
+    font-size:30px;
+    color:white;
+    margin-right:40px;
+    cursor:pointer;
+    display:none;
+
+}
+
+#menu-controller {
+    display: none;
+}
+
+@media (max-width: 858px) {
+    .bars-menu {
+        display:block;
+    }
+    nav .nav-flex {
+        justify-content: space-between;
+    }
+
+     /* Initially hide the menu */
+     .nav-flex ul {
+        position: fixed;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        top:70px;
+        left:-200%; /* Initially off-screen */
+        text-align: center;
+        transition: all 0.5s;
+        background-color: rgba(0,0,0,0.85);
+    }
+    
+    .nav-flex ul li {
+        display:block;
+        margin: 50px 0;
+        line-height:30px;
+    }
+    .nav-flex ul li a {
+        font-size: 20px;
+    }
+    .nav-flex ul li a:hover{
+        background: none;
+        color: lightgrey;
+    }
+    .nav-flex ul li a.active {
+        background-color:lightgrey;
+    }
+    
+    #menu-controller:checked ~  ul {
+        left: 0 !important;
+    }
+    #menu-controller:checked   {
+        
+        background-color: black !important;
+    }
+    
+    
+}
+
+
+
+  
+  /* Standard Desktops */
+@media (min-width: 1280px) {
+    
+    nav #Icon {
+        display:block;
+    }
+    nav #Icon a button {
+        border-radius: 10%;
+        width:100%;
+        height: 100%;
+        text-align: center;
+        padding-top: 10px;
+        padding-bottom:10px;
+        outline-style: solid;
+        
+    }
+    nav #Icon a button:hover {
+        background-color: lightblue;
+        outline-style: dashed;
+        transition: .3s;
+    }
+}
+
+
+/* Sections */
+
+
+.sections {
+    scroll-snap-type: y mandatory;
+    overflow-y:scroll;
+    height:100vh;
+}
+
+section {
+    height:100vh;
+    display: flex;
+    justify-content:center;
+    scroll-snap-align: start;
+    
+}
+
+#Home {
+    background-image: url("../img/Backgroundimage.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: black;
+    
+}
+
+#Home .Header-Text {
+    position:sticky;
+    margin-top: 10%;    
+    color: white;
+}
+#Home .Header-Text button {
+    margin-left: 30%;
+    width:50%;
+    border-radius: 5%;
+    padding: 10px;
+    background-color: transparent;
+    color: white;
+
+}
+
+#Home .Header-Text button:hover {
+    background-color: lightblue;
+}
+
+#About {
+    background-color: blue;
+
+}
+
+#Projects {
+    background-color: yellow;
+
+}
+
+#Youtube {
+    background-color: purple;
+
+}
+
+#Contacts {
+    background-color: white;
+
+}
+
+
+
+
+
+/*----------- MEDIA QUERIES ----------------*/
+
+/* Smartphones */
+@media (max-width: 767px) {
+    /* Your CSS rules for small screens here */
+}
+  
+  /* Tablets */
+@media (min-width: 768px) and (max-width: 1023px) {
+    /* Your CSS rules for medium-sized screens here */
+}
+
+/* Small Desktops and Laptops */
+@media (min-width: 1024px) and (max-width: 1279px) {
+    /* Your CSS rules for small desktop screens here */
+  }
